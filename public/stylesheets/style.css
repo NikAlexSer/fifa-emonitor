@@ -12,8 +12,37 @@ body {
   display: none; }
 
 #chart_div1 {
-  display: inline-block;
-  width: 50%; }
+  display: inline-block; }
+
+div.jqcloud span.w1 {
+  color: #dd9da3; }
+
+div.jqcloud span.w2 {
+  color: #d8dd29; }
+
+div.jqcloud span.w3 {
+  color: #82dd5c; }
+
+div.jqcloud span.w4 {
+  color: #4bddba; }
+
+div.jqcloud span.w5 {
+  color: #2aa8dd; }
+
+div.jqcloud span.w6 {
+  color: #2219dd; }
+
+div.jqcloud span.w7 {
+  color: #dd26cf; }
+
+div.jqcloud span.w8 {
+  color: #dda487; }
+
+div.jqcloud span.w9 {
+  color: #883edd; }
+
+div.jqcloud span.w10 {
+  color: #dda42a; }
 
 [data-tooltip] {
   position: relative;
