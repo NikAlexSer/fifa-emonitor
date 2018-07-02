@@ -98,6 +98,9 @@ function drawMaterialFr() {
     ['FR', 'Количество'],
     dataArray.topKeywords.FR[0][0],
     dataArray.topKeywords.FR[0][1],
+    dataArray.topKeywords.FR[0][2],
+    dataArray.topKeywords.FR[0][3],
+    dataArray.topKeywords.FR[0][4],
   ]);
 
   var materialOptions = {
@@ -139,6 +142,10 @@ function drawMaterialPt() {
   var data = google.visualization.arrayToDataTable([
     ['PT', 'Количество'],
     dataArray.topKeywords.PT[0][0],
+    dataArray.topKeywords.PT[0][1],
+    dataArray.topKeywords.PT[0][2],
+    dataArray.topKeywords.PT[0][3],
+    dataArray.topKeywords.PT[0][4],
   ]);
 
   var materialOptions = {

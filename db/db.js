@@ -42,21 +42,34 @@ MongoClient.connect(uri, settings, function(err, client) {
     console.log('Connected...');
   }
 
-  var cursorRu = client.db('worldcup2018_release').collection('fifa2018_with_keywords').find({language: "ru"})
-  collectTweets("RU", cursorRu)
-  var cursorEn = client.db('worldcup2018_release').collection('fifa2018_with_keywords').find({language: "en"})
-  collectTweets("EN", cursorEn)
-  var cursorFr = client.db('worldcup2018_release').collection('fifa2018_with_keywords').find({language: "fr"})
-  collectTweets("FR", cursorFr)
-  var cursorEs = client.db('worldcup2018_release').collection('fifa2018_with_keywords').find({language: "es"})
-  collectTweets("ES", cursorEs)
-  var cursorPt = client.db('worldcup2018_release').collection('fifa2018_with_keywords').find({language: "pt"})
-  collectTweets("PT", cursorPt)
+
+
+  //var cursorRu = client.db('worldcup2018_release').collection('fifa2018_with_keywords').find({language: "ru"})
+  collectTweets("RU", client)
+  collectTweets("EN", client)
+  collectTweets("ES", client)
+  collectTweets("PT", client)
+  collectTweets("FR", client)
+
+  // var cursorEn = client.db('worldcup2018_release').collection('fifa2018_with_keywords', 'mundial_with_keywords').find({language: "en"})
+  // collectTweets("EN", cursorEn)
+  // var cursorFr = client.db('worldcup2018_release').collection('fifa2018_with_keywords', 'mundial_with_keywords').find({language: "fr"})
+  // collectTweets("FR", cursorFr)
+  // var cursorEs = client.db('worldcup2018_release').collection('fifa2018_with_keywords', 'mundial_with_keywords').find({language: "es"})
+  // collectTweets("ES", cursorEs)
+  // var cursorPt = client.db('worldcup2018_release').collection('fifa2018_with_keywords', 'mundial_with_keywords').find({language: "pt"})
+  // collectTweets("PT", cursorPt)
 
 });
 
-async function collectTweets(lang, cursor) {
-  let tweets = await cursor.toArray();
+async function collectTweets(lang, client) {
+  let fifa2018_with_keywords = await client.db('worldcup2018_release').collection('fifa2018_with_keywords').find({language: lang.toLowerCase()}).toArray();
+  let mundial_with_keywords = await client.db('worldcup2018_release').collection('mundial_with_keywords').find({language: lang.toLowerCase()}).toArray();
+  let worldcup2018_with_keywords = await client.db('worldcup2018_release').collection('worldcup2018_with_keywords').find({language: lang.toLowerCase()}).toArray();
+  let worldcupfever_with_keywords = await client.db('worldcup2018_release').collection('worldcupfever_with_keywords').find({language: lang.toLowerCase()}).toArray();
+
+  let tweets = await fifa2018_with_keywords.concat(mundial_with_keywords.concat(worldcupfever_with_keywords.concat(worldcup2018_with_keywords)));
+
 
   if (tweets.length > 0) {
     var polarityPos = 0, polarityNeg = 0;

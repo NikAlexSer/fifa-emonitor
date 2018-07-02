@@ -12,6 +12,11 @@ $.get('/getdata', function(data) {
 
     var word_list = [
       {text: dataArray.topKeywords.PT[0][0][0], weight: dataArray.topKeywords.PT[0][0][1], html: {"data-tooltip": dataArray.topKeywords.PT[0][0][1]}},
+      {text: dataArray.topKeywords.PT[0][1][0], weight: dataArray.topKeywords.PT[0][1][1], html: {"data-tooltip": dataArray.topKeywords.PT[0][1][1]}},
+      {text: dataArray.topKeywords.PT[0][2][0], weight: dataArray.topKeywords.PT[0][2][1], html: {"data-tooltip": dataArray.topKeywords.PT[0][2][1]}},
+      {text: dataArray.topKeywords.PT[0][3][0], weight: dataArray.topKeywords.PT[0][3][1], html: {"data-tooltip": dataArray.topKeywords.PT[0][3][1]}},
+      {text: dataArray.topKeywords.PT[0][4][0], weight: dataArray.topKeywords.PT[0][4][1], html: {"data-tooltip": dataArray.topKeywords.PT[0][4][1]}},
+
 
       {text: dataArray.topKeywords.ES[0][0][0], weight: dataArray.topKeywords.ES[0][0][1], html: {"data-tooltip": dataArray.topKeywords.ES[0][0][1]}},
       {text: dataArray.topKeywords.ES[0][1][0], weight: dataArray.topKeywords.ES[0][1][1], html: {"data-tooltip": dataArray.topKeywords.ES[0][1][1]}},
@@ -33,6 +38,10 @@ $.get('/getdata', function(data) {
 
       {text: dataArray.topKeywords.FR[0][0][0], weight: dataArray.topKeywords.FR[0][0][1], html: {"data-tooltip": dataArray.topKeywords.FR[0][0][1]}},
       {text: dataArray.topKeywords.FR[0][1][0], weight: dataArray.topKeywords.FR[0][1][1], html: {"data-tooltip": dataArray.topKeywords.FR[0][1][1]}},
+      {text: dataArray.topKeywords.FR[0][2][0], weight: dataArray.topKeywords.FR[0][2][1], html: {"data-tooltip": dataArray.topKeywords.FR[0][2][1]}},
+      {text: dataArray.topKeywords.FR[0][3][0], weight: dataArray.topKeywords.FR[0][3][1], html: {"data-tooltip": dataArray.topKeywords.FR[0][3][1]}},
+      {text: dataArray.topKeywords.FR[0][4][0], weight: dataArray.topKeywords.FR[0][4][1], html: {"data-tooltip": dataArray.topKeywords.FR[0][4][1]}}
+
     ];
 
 
