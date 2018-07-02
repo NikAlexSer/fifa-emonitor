@@ -3,4 +3,9 @@ $(document).ready(function() {
     $('.navbar-nav li').removeClass('active')
     $(this).addClass('active')
   })
+
+
+  var dataArray;
+
+  $.gey
 })
