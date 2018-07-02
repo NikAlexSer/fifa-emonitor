@@ -4,11 +4,11 @@ google.charts.setOnLoadCallback(drawChartPie);
 function drawChartPie() {
   var data = google.visualization.arrayToDataTable([
     ['Country', 'Number of tweets'],
-    ['RU',     1017],
-    ['EN',      2389],
-    ['FR',  257],
-    ['SP', 570],
-    ['PT',    340]
+    ['RU',     dataArray.langLength.RU],
+    ['EN',      dataArray.langLength.EN],
+    ['FR',  dataArray.langLength.FR],
+    ['ES', dataArray.langLength.ES],
+    ['PT',    dataArray.langLength.PT]
   ]);
 
   var options = {

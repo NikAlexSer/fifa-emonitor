@@ -10,11 +10,11 @@ function drawStuffPosNeg() {
   data.addColumn('number', 'Позитив');
 
   data.addRows([
-    [ 'RU', 79.62555092574772, 36.423424325788343 ],
-    [ 'FR', 91.48721034809721, 67.0857034060875 ],
-    [ 'SP', 66.48267811876455, 25.954613225788343 ],
-    [ 'EN', 80.68276798555178, 49.23423562365778 ],
-    [ 'PT', 66.62523013251132, 33.29751821765778 ],
+    dataArray.tonCountry[0],
+    dataArray.tonCountry[1],
+    dataArray.tonCountry[2],
+    dataArray.tonCountry[3],
+    dataArray.tonCountry[4],
   ]);
 
   var materialOptions = {

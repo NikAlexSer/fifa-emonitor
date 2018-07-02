@@ -34,12 +34,14 @@ function drawChart() {
   data.addColumn('number', 'EN');
   data.addColumn('number', 'PT');
 
+
+  dataArray.countryEmo.RU[1]
   data.addRows([
-    ['Печаль', 8.2163, 23.385125000000006, 19.003794945980417, 19.003794945980417, 14.899969892473102],
-    ['Радость', 20.301, 33.04941666666667, 26.638827941176473, 42.08237586522642, 36.666264516129026],
-    ['Страх', 3.801, 9.008108333333332, 9.502714705882347, 7.593078373924316, 8.5775505376344],
-    ['Отвращение', 10.47895, 15.946433333333335, 20.787857352941174, 14.991822834645536, 15.113996774193536],
-    ['Гнев', 11.51665, 13.35808333333333, 12.436674999999997, 13.94829934078006, 12.993383870967753]
+    ['Печаль', dataArray.countryEmo.RU[1], dataArray.countryEmo.FR[1], dataArray.countryEmo.PT[1], dataArray.countryEmo.ES[1], dataArray.countryEmo.EN[1]],
+    ['Радость', dataArray.countryEmo.RU[2], dataArray.countryEmo.FR[2], dataArray.countryEmo.PT[2], dataArray.countryEmo.ES[2], dataArray.countryEmo.EN[2]],
+    ['Страх', dataArray.countryEmo.RU[3], dataArray.countryEmo.FR[3], dataArray.countryEmo.PT[3], dataArray.countryEmo.ES[3], dataArray.countryEmo.EN[3]],
+    ['Отвращение', dataArray.countryEmo.RU[4], dataArray.countryEmo.FR[4], dataArray.countryEmo.PT[4], dataArray.countryEmo.ES[41], dataArray.countryEmo.EN[4]],
+    ['Гнев', dataArray.countryEmo.RU[5], dataArray.countryEmo.FR[5], dataArray.countryEmo.PT[5], dataArray.countryEmo.ES[5], dataArray.countryEmo.EN[5]]
   ]);
 
   var chart = new google.charts.Line(document.getElementById('chart_div4'));
