@@ -26,24 +26,24 @@ function drawStuffPosNeg() {
       }
     },
     backgroundColor: {
-      fill: '#171b23',
-      opacity: 100
+      fill: '#F4F4F4',
+      opacity: 10
     },
     hAxis: {
       textStyle: {
-        color: '#bcc5ca'
+        color: '#646464'
       }
     },
     vAxis: {
       textStyle: {
-        color: '#bcc5ca'
+        color: '#646464'
       }
     },
     legend: {
       position: 'bottom',
       maxLines: 3,
       textStyle: {
-        color: '#bcc5ca'
+        color: '#646464'
       }
     }
   };

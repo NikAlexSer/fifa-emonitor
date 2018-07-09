@@ -17,17 +17,17 @@ function drawMaterialRu() {
     height: 200,
     hAxis: {
       textStyle: {
-        color: '#bcc5ca'
+        color: '#646464'
       }
     },
     bars: 'horizontal',
     backgroundColor: {
-      fill: '#171b23',
-      opacity: 100
+      fill: '#F4F4F4',
+      opacity: 0
     },
     vAxis: {
       textStyle: {
-        color: '#bcc5ca'
+        color: '#646464'
       }
     },
     legend: {
@@ -62,17 +62,17 @@ function drawMaterialEn() {
     height: 200,
     hAxis: {
       textStyle: {
-        color: '#bcc5ca'
+        color: '#646464'
       }
     },
     bars: 'horizontal',
     backgroundColor: {
-      fill: '#171b23',
-      opacity: 100
+      fill: '#F4F4F4',
+      opacity: 0
     },
     vAxis: {
       textStyle: {
-        color: '#bcc5ca'
+        color: '#646464'
       }
     },
     legend: {
@@ -106,17 +106,17 @@ function drawMaterialFr() {
     height: 200,
     hAxis: {
       textStyle: {
-        color: '#bcc5ca'
+        color: '#646464'
       }
     },
     bars: 'horizontal',
     backgroundColor: {
-      fill: '#171b23',
-      opacity: 100
+      fill: '#F4F4F4',
+      opacity: 0
     },
     vAxis: {
       textStyle: {
-        color: '#bcc5ca'
+        color: '#646464'
       }
     },
     legend: {
@@ -151,17 +151,17 @@ function drawMaterialPt() {
     height: 200,
     hAxis: {
       textStyle: {
-        color: '#bcc5ca'
+        color: '#646464'
       }
     },
     bars: 'horizontal',
     backgroundColor: {
-      fill: '#171b23',
-      opacity: 100
+      fill: '#F4F4F4',
+      opacity: 0
     },
     vAxis: {
       textStyle: {
-        color: '#bcc5ca'
+        color: '#646464'
       }
     },
     legend: {
@@ -196,17 +196,17 @@ function drawMaterialEs() {
     height: 200,
     hAxis: {
       textStyle: {
-        color: '#bcc5ca'
+        color: '#646464'
       }
     },
     bars: 'horizontal',
     backgroundColor: {
-      fill: '#171b23',
-      opacity: 100
+      fill: '#F4F4F4',
+      opacity: 0
     },
     vAxis: {
       textStyle: {
-        color: '#bcc5ca'
+        color: '#646464'
       }
     },
     legend: {

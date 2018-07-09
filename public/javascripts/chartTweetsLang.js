@@ -14,24 +14,24 @@ function drawChartPie() {
   var options = {
     height: 500,
     backgroundColor: {
-      fill: '#171b23',
-      opacity: 100
+      fill: '#F4F4F4',
+      opacity:0
     },
     hAxis: {
       textStyle: {
-        color: '#bcc5ca'
+        color: '#646464'
       }
     },
     vAxis: {
       textStyle: {
-        color: '#bcc5ca'
+        color: '#646464'
       }
     },
     legend: {
       position: 'bottom',
       maxLines: 3,
       textStyle: {
-        color: '#bcc5ca'
+        color: '#646464'
       }
     }
   };
@@ -155,24 +155,24 @@ function drawStuffRU() {
           }
         },
         backgroundColor: {
-          fill: '#171b23',
-          opacity: 100
+          fill: '#F4F4F4',
+          opacity: 0
         },
         hAxis: {
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         },
         vAxis: {
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         },
         legend: {
           position: 'bottom',
           maxLines: 3,
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         }
       };
@@ -216,24 +216,24 @@ function drawStuffEN() {
           }
         },
         backgroundColor: {
-          fill: '#171b23',
-          opacity: 100
+          fill: '#F4F4F4',
+          opacity: 0
         },
         hAxis: {
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         },
         vAxis: {
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         },
         legend: {
           position: 'bottom',
           maxLines: 3,
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         }
       };
@@ -279,24 +279,24 @@ function drawStuffFR() {
           }
         },
         backgroundColor: {
-          fill: '#171b23',
-          opacity: 100
+          fill: '#F4F4F4',
+          opacity: 0
         },
         hAxis: {
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         },
         vAxis: {
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         },
         legend: {
           position: 'bottom',
           maxLines: 3,
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         }
       };
@@ -341,24 +341,24 @@ function drawStuffES() {
           }
         },
         backgroundColor: {
-          fill: '#171b23',
-          opacity: 100
+          fill: '#F4F4F4',
+          opacity: 0
         },
         hAxis: {
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         },
         vAxis: {
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         },
         legend: {
           position: 'bottom',
           maxLines: 3,
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         }
       };
@@ -405,24 +405,24 @@ function drawStuffPT() {
           }
         },
         backgroundColor: {
-          fill: '#171b23',
-          opacity: 100
+          fill: '#F4F4F4',
+          opacity: 0
         },
         hAxis: {
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         },
         vAxis: {
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         },
         legend: {
           position: 'bottom',
           maxLines: 3,
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         }
       };
@@ -468,24 +468,24 @@ function drawStuffEmoRU() {
           }
         },
         backgroundColor: {
-          fill: '#171b23',
-          opacity: 100
+          fill: '#F4F4F4',
+          opacity: 0
         },
         hAxis: {
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         },
         vAxis: {
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         },
         legend: {
           position: 'bottom',
           maxLines: 3,
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         }
       };
@@ -527,24 +527,24 @@ function drawStuffEmoEN() {
           }
         },
         backgroundColor: {
-          fill: '#171b23',
-          opacity: 100
+          fill: '#F4F4F4',
+          opacity: 0
         },
         hAxis: {
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         },
         vAxis: {
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         },
         legend: {
           position: 'bottom',
           maxLines: 3,
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         }
       };
@@ -590,24 +590,24 @@ function drawStuffEmoFR() {
           }
         },
         backgroundColor: {
-          fill: '#171b23',
-          opacity: 100
+          fill: '#F4F4F4',
+          opacity: 0
         },
         hAxis: {
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         },
         vAxis: {
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         },
         legend: {
           position: 'bottom',
           maxLines: 3,
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         }
       };
@@ -653,24 +653,24 @@ function drawStuffEmoES() {
           }
         },
         backgroundColor: {
-          fill: '#171b23',
-          opacity: 100
+          fill: '#F4F4F4',
+          opacity: 0
         },
         hAxis: {
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         },
         vAxis: {
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         },
         legend: {
           position: 'bottom',
           maxLines: 3,
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         }
       };
@@ -715,24 +715,24 @@ function drawStuffEmoPT() {
           }
         },
         backgroundColor: {
-          fill: '#171b23',
-          opacity: 100
+          fill: '#F4F4F4',
+          opacity: 0
         },
         hAxis: {
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         },
         vAxis: {
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         },
         legend: {
           position: 'bottom',
           maxLines: 3,
           textStyle: {
-            color: '#bcc5ca'
+            color: '#646464'
           }
         }
       };
