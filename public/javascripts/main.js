@@ -40,7 +40,6 @@ $.get('/getdata', function(data) {
       {text: dataArray.topKeywords.FR[0][1][0], weight: dataArray.topKeywords.FR[0][1][1], html: {"data-tooltip": dataArray.topKeywords.FR[0][1][1]}},
       {text: dataArray.topKeywords.FR[0][2][0], weight: dataArray.topKeywords.FR[0][2][1], html: {"data-tooltip": dataArray.topKeywords.FR[0][2][1]}},
       {text: dataArray.topKeywords.FR[0][3][0], weight: dataArray.topKeywords.FR[0][3][1], html: {"data-tooltip": dataArray.topKeywords.FR[0][3][1]}},
-      {text: dataArray.topKeywords.FR[0][4][0], weight: dataArray.topKeywords.FR[0][4][1], html: {"data-tooltip": dataArray.topKeywords.FR[0][4][1]}}
 
     ];
 
@@ -52,6 +51,11 @@ $.get('/getdata', function(data) {
           autoResize: true
         });
   });
-})
+
+  // var temp = setTimeout(function hideCharts() {
+  //   $('.dayspolar').addClass('hidden')
+  // }, 4000)
+
+});
 
 

@@ -100,7 +100,6 @@ function drawMaterialFr() {
     dataArray.topKeywords.FR[0][1],
     dataArray.topKeywords.FR[0][2],
     dataArray.topKeywords.FR[0][3],
-    dataArray.topKeywords.FR[0][4],
   ]);
 
   var materialOptions = {

@@ -54,6 +54,14 @@ div.jqcloud span.w10 {
   cursor: pointer;
 }
 
+.hidden {
+  display: none;
+}
+
+.dayspolar div {
+  width: 100% !important;
+}
+
 /* Hide the tooltip content by default */
 [data-tooltip]:before,
 [data-tooltip]:after {

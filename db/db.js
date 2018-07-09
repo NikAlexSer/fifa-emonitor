@@ -30,6 +30,13 @@ var dataArray = {
         ES: [],
         FR: [],
         PT: [],
+      },
+      langDays: {
+        RU: [],
+        EN: [],
+        ES: [],
+        FR: [],
+        PT: [],
       }
     };
 
@@ -63,10 +70,10 @@ MongoClient.connect(uri, settings, function(err, client) {
 });
 
 async function collectTweets(lang, client) {
-  let fifa2018_with_keywords = await client.db('worldcup2018_release').collection('fifa2018_with_keywords').find({language: lang.toLowerCase()}).toArray();
-  let mundial_with_keywords = await client.db('worldcup2018_release').collection('mundial_with_keywords').find({language: lang.toLowerCase()}).toArray();
-  let worldcup2018_with_keywords = await client.db('worldcup2018_release').collection('worldcup2018_with_keywords').find({language: lang.toLowerCase()}).toArray();
-  let worldcupfever_with_keywords = await client.db('worldcup2018_release').collection('worldcupfever_with_keywords').find({language: lang.toLowerCase()}).toArray();
+  let fifa2018_with_keywords = await client.db('worldcup2018_release').collection('fifa2018_with_keywords').find({language: lang.toLowerCase()}).toArray(),
+      mundial_with_keywords = await client.db('worldcup2018_release').collection('mundial_with_keywords').find({language: lang.toLowerCase()}).toArray(),
+      worldcup2018_with_keywords = await client.db('worldcup2018_release').collection('worldcup2018_with_keywords').find({language: lang.toLowerCase()}).toArray(),
+      worldcupfever_with_keywords = await client.db('worldcup2018_release').collection('worldcupfever_with_keywords').find({language: lang.toLowerCase()}).toArray();
 
   let tweets = await fifa2018_with_keywords.concat(mundial_with_keywords.concat(worldcupfever_with_keywords.concat(worldcup2018_with_keywords)));
 
@@ -86,7 +93,7 @@ async function collectTweets(lang, client) {
 
     polarityPos = polarityPos / countPos * 100;
     polarityNeg = polarityNeg / countNeg * 100;
-    console.log(lang, polarityPos, polarityNeg);
+    //console.log(lang, polarityPos, polarityNeg);
     dataArray.tonCountry.push([lang, polarityPos, polarityNeg])
 
 
@@ -118,6 +125,9 @@ async function collectTweets(lang, client) {
       if (keys[key] === 1 || keys[key] === 2 || keys[key] === 3 || keys[key] === 4 || keys[key] === 5) {
         delete keys[key]
       }
+      if (key === 'world cup' || key === 'worldcup' || key === 'fifa world cup' || key === 'worldcup2018' || key === 'worldcup' || key === 'worldcup') {
+        delete keys[key]
+      }
     }
 
     var sortable = [];
@@ -128,7 +138,7 @@ async function collectTweets(lang, client) {
     sortable.sort(function(a, b) {
       return a[1] - b[1];
     });
-    console.log(sortable.slice(-5))
+    //console.log(sortable.slice(-5))
 
     dataArray.topKeywords[lang].push(sortable.slice(-5))
     dataArray.langLength[lang] = tweets.length
@@ -172,6 +182,91 @@ async function collectTweets(lang, client) {
   }
 
 
+  let testArrayObj = {};
+
+  let dateArr = ['2018-06-19', '2018-06-20', '2018-06-21', '2018-06-22',
+                 '2018-06-23', '2018-06-24', '2018-06-25', '2018-06-26',
+                 '2018-06-27', '2018-06-28', '2018-06-29', '2018-06-30',
+                 '2018-07-01', '2018-07-02', '2018-07-03', '2018-07-04',
+                 '2018-07-05' ];
+
+
+  for (let i = 0; i < dateArr.length; i++) {
+    let tempArr = [];
+
+    testArrayObj[dateArr[i]] = {
+      date: dateArr[i],
+      polarityNeg: 0,
+      polarityPos: 0,
+      emo: [0, 0, 0, 0, 0]
+    };
+
+    tempArr = tweets.filter(function (item) {
+        return item.date === dateArr[i]
+    })
+
+    let polarityPos = 0, polarityNeg = 0;
+    let countPos = 0, countNeg = 0;
+
+    tempArr.forEach(function(item) {
+      if (item.polarity > 0) {
+        polarityPos += +item.polarity;
+        countPos += 1
+      } else {
+        polarityNeg += Math.abs(+item.polarity);
+        countNeg += 1
+      }
+    });
+
+    polarityPos = polarityPos / countPos * 100;
+    polarityNeg = polarityNeg / countNeg * 100;
+    testArrayObj[dateArr[i]].polarityNeg = polarityNeg;
+    testArrayObj[dateArr[i]].polarityPos = polarityPos;
+
+    let emo = {sadness: 0, joy: 0, fear: 0, disgust: 0, anger: 0};
+    let count = 0;
+    tempArr.forEach(function(item) {
+      if (item.hasOwnProperty('keywords')) {
+        item.keywords.forEach(function (elem) {
+          if (elem.hasOwnProperty('emotion')) {
+            count++;
+            if (elem.emotion.sadness) {
+              emo.sadness += +elem.emotion.sadness
+            }
+            if (elem.emotion.joy) {
+              emo.joy += +elem.emotion.joy
+            }
+            if (elem.emotion.fear) {
+              emo.fear += +elem.emotion.fear
+            }
+            if (elem.emotion.disgust) {
+              emo.disgust += +elem.emotion.disgust
+            }
+            if (elem.emotion.anger) {
+              emo.anger += +elem.emotion.anger
+            }
+          }
+        })
+      }
+    });
+
+
+    emo.sadness = emo.sadness / (count > 0 ? count : 1) * 100;
+    emo.joy = emo.joy / (count > 0 ? count : 1) * 100;
+    emo.fear = emo.fear / (count > 0 ? count : 1) * 100;
+    emo.disgust = emo.disgust / (count > 0 ? count : 1) * 100;
+    emo.anger = emo.anger / (count > 0 ? count : 1) * 100;
+
+    testArrayObj[dateArr[i]].emo = [+emo.sadness, +emo.joy, +emo.fear, +emo.disgust, +emo.anger]
+
+    // tweets: tweets.filter(function (item) {
+    //   return item.date === dateArr[i]
+    // }),
+  }
+
+  //console.log(testArrayObj)
+
+  dataArray.langDays[lang] = testArrayObj
 
   console.log(dataArray)
 
