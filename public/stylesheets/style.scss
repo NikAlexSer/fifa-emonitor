@@ -4,6 +4,10 @@ body {
   background: #F4F4F4;
 }
 
+.logo {
+  width: 100%;
+  height: auto;
+}
 .chart-container {
   width: 100%;
   padding: 25px;
@@ -1659,7 +1663,6 @@ ul ul {
   position: relative;
   min-height: 50px;
   margin-bottom: 22px;
-  border: 1px solid transparent
 }
 
 .navbar:after,

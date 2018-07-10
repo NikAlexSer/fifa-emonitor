@@ -3,6 +3,10 @@ body {
   font: 14px "open_sanscondbold", Helvetica, Arial, sans-serif;
   background: #F4F4F4; }
 
+.logo {
+  width: 100%;
+  height: auto; }
+
 .chart-container {
   width: 100%;
   padding: 25px;
@@ -1276,8 +1280,7 @@ ul ul {
 .navbar {
   position: relative;
   min-height: 50px;
-  margin-bottom: 22px;
-  border: 1px solid transparent; }
+  margin-bottom: 22px; }
 
 .navbar:after,
 .navbar:before {
