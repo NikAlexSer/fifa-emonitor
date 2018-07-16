@@ -5,7 +5,6 @@ function drawStuff() {
   var chartDiv = document.getElementById('chart_div5'),
       data = new google.visualization.DataTable(),
       materialOptions = {
-        width: 800,
         height: 500,
         axes: {
           y: {
@@ -17,11 +16,13 @@ function drawStuff() {
           opacity: 0
         },
         hAxis: {
+          title: 'Языки',
           textStyle: {
             color: '#646464'
           }
         },
         vAxis: {
+          title: 'Уровень эмоции в %',
           textStyle: {
             color: '#646464'
           }

@@ -138,7 +138,7 @@ function drawStuffRU() {
       tempArr = [];
 
   for (var key in tempObj) {
-    tempArr.push([tempObj[key].date.slice(8, 10), tempObj[key].polarityPos, tempObj[key].polarityNeg])
+    tempArr.push([tempObj[key].date.slice(8, 10) + '.' + tempObj[key].date.slice(5, 7), tempObj[key].polarityPos, tempObj[key].polarityNeg])
   }
 
 
@@ -164,6 +164,7 @@ function drawStuffRU() {
           }
         },
         vAxis: {
+          title: 'Доля сообщений, в %',
           textStyle: {
             color: '#646464'
           }
@@ -199,7 +200,7 @@ function drawStuffEN() {
       tempArr = [];
 
   for (var key in tempObj) {
-    tempArr.push([tempObj[key].date.slice(8, 10), tempObj[key].polarityPos, tempObj[key].polarityNeg])
+    tempArr.push([tempObj[key].date.slice(8, 10) + '.' + tempObj[key].date.slice(5, 7), tempObj[key].polarityPos, tempObj[key].polarityNeg])
   }
 
 
@@ -225,6 +226,7 @@ function drawStuffEN() {
           }
         },
         vAxis: {
+          title: 'Доля сообщений, в %',
           textStyle: {
             color: '#646464'
           }
@@ -266,7 +268,7 @@ function drawStuffFR() {
       tempArr = [];
 
   for (var key in tempObj) {
-    tempArr.push([tempObj[key].date.slice(8, 10), tempObj[key].polarityPos, tempObj[key].polarityNeg])
+    tempArr.push([tempObj[key].date.slice(8, 10) + '.' + tempObj[key].date.slice(5, 7), tempObj[key].polarityPos, tempObj[key].polarityNeg])
   }
 
   var chartDiv = document.getElementById('chart_days_polarityFR'),
@@ -288,6 +290,7 @@ function drawStuffFR() {
           }
         },
         vAxis: {
+          title: 'Доля сообщений, в %',
           textStyle: {
             color: '#646464'
           }
@@ -328,7 +331,7 @@ function drawStuffES() {
       tempArr = [];
 
   for (var key in tempObj) {
-    tempArr.push([tempObj[key].date.slice(8, 10), tempObj[key].polarityPos, tempObj[key].polarityNeg])
+    tempArr.push([tempObj[key].date.slice(8, 10) + '.' + tempObj[key].date.slice(5, 7), tempObj[key].polarityPos, tempObj[key].polarityNeg])
   }
 
   var chartDiv = document.getElementById('chart_days_polarityES'),
@@ -350,6 +353,7 @@ function drawStuffES() {
           }
         },
         vAxis: {
+          title: 'Доля сообщений, в %',
           textStyle: {
             color: '#646464'
           }
@@ -391,7 +395,7 @@ function drawStuffPT() {
       tempArr = [];
 
   for (var key in tempObj) {
-    tempArr.push([tempObj[key].date.slice(8, 10), tempObj[key].polarityPos, tempObj[key].polarityNeg])
+    tempArr.push([tempObj[key].date.slice(8, 10) + '.' + tempObj[key].date.slice(5, 7), tempObj[key].polarityPos, tempObj[key].polarityNeg])
   }
 
 
@@ -414,6 +418,7 @@ function drawStuffPT() {
           }
         },
         vAxis: {
+          title: 'Доля сообщений, в %',
           textStyle: {
             color: '#646464'
           }
@@ -454,7 +459,7 @@ function drawStuffEmoRU() {
       tempArr = [];
 
   for (var key in tempObj) {
-    tempArr.push([tempObj[key].date.slice(8, 10), tempObj[key].emo[0], tempObj[key].emo[1],tempObj[key].emo[2],tempObj[key].emo[3],tempObj[key].emo[4],])
+    tempArr.push([tempObj[key].date.slice(8, 10) + '.' + tempObj[key].date.slice(5, 7), tempObj[key].emo[0], tempObj[key].emo[1],tempObj[key].emo[2],tempObj[key].emo[3],tempObj[key].emo[4],])
   }
 
 
@@ -477,6 +482,7 @@ function drawStuffEmoRU() {
           }
         },
         vAxis: {
+          title: 'Доля сообщений, в %',
           textStyle: {
             color: '#646464'
           }
@@ -513,7 +519,7 @@ function drawStuffEmoEN() {
       tempArr = [];
 
   for (var key in tempObj) {
-    tempArr.push([tempObj[key].date.slice(8, 10), tempObj[key].emo[0], tempObj[key].emo[1],tempObj[key].emo[2],tempObj[key].emo[3],tempObj[key].emo[4],])
+    tempArr.push([tempObj[key].date.slice(8, 10) + '.' + tempObj[key].date.slice(5, 7), tempObj[key].emo[0], tempObj[key].emo[1],tempObj[key].emo[2],tempObj[key].emo[3],tempObj[key].emo[4],])
   }
 
 
@@ -536,6 +542,7 @@ function drawStuffEmoEN() {
           }
         },
         vAxis: {
+          title: 'Доля сообщений, в %',
           textStyle: {
             color: '#646464'
           }
@@ -576,7 +583,7 @@ function drawStuffEmoFR() {
       tempArr = [];
 
   for (var key in tempObj) {
-    tempArr.push([tempObj[key].date.slice(8, 10), tempObj[key].emo[0], tempObj[key].emo[1],tempObj[key].emo[2],tempObj[key].emo[3],tempObj[key].emo[4],])
+    tempArr.push([tempObj[key].date.slice(8, 10) + '.' + tempObj[key].date.slice(5, 7), tempObj[key].emo[0], tempObj[key].emo[1],tempObj[key].emo[2],tempObj[key].emo[3],tempObj[key].emo[4],])
   }
 
 
@@ -599,6 +606,7 @@ function drawStuffEmoFR() {
           }
         },
         vAxis: {
+          title: 'Доля сообщений, в %',
           textStyle: {
             color: '#646464'
           }
@@ -639,7 +647,7 @@ function drawStuffEmoES() {
       tempArr = [];
 
   for (var key in tempObj) {
-    tempArr.push([tempObj[key].date.slice(8, 10), tempObj[key].emo[0], tempObj[key].emo[1],tempObj[key].emo[2],tempObj[key].emo[3],tempObj[key].emo[4],])
+    tempArr.push([tempObj[key].date.slice(8, 10) + '.' + tempObj[key].date.slice(5, 7), tempObj[key].emo[0], tempObj[key].emo[1],tempObj[key].emo[2],tempObj[key].emo[3],tempObj[key].emo[4],])
   }
 
 
@@ -662,6 +670,7 @@ function drawStuffEmoES() {
           }
         },
         vAxis: {
+          title: 'Доля сообщений, в %',
           textStyle: {
             color: '#646464'
           }
@@ -702,7 +711,7 @@ function drawStuffEmoPT() {
       tempArr = [];
 
   for (var key in tempObj) {
-    tempArr.push([tempObj[key].date.slice(8, 10), tempObj[key].emo[0], tempObj[key].emo[1],tempObj[key].emo[2],tempObj[key].emo[3],tempObj[key].emo[4],])
+    tempArr.push([tempObj[key].date.slice(8, 10) + '.' + tempObj[key].date.slice(5, 7), tempObj[key].emo[0], tempObj[key].emo[1],tempObj[key].emo[2],tempObj[key].emo[3],tempObj[key].emo[4],])
   }
 
   var chartDiv = document.getElementById('chart_days_emoPT'),
@@ -724,6 +733,7 @@ function drawStuffEmoPT() {
           }
         },
         vAxis: {
+          title: 'Доля сообщений, в %',
           textStyle: {
             color: '#646464'
           }

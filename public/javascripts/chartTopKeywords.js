@@ -16,6 +16,7 @@ function drawMaterialRu() {
   var materialOptions = {
     height: 200,
     hAxis: {
+      title: 'Количество',
       textStyle: {
         color: '#646464'
       }
@@ -61,6 +62,7 @@ function drawMaterialEn() {
   var materialOptions = {
     height: 200,
     hAxis: {
+      title: 'Количество',
       textStyle: {
         color: '#646464'
       }
@@ -105,6 +107,7 @@ function drawMaterialFr() {
   var materialOptions = {
     height: 200,
     hAxis: {
+      title: 'Количество',
       textStyle: {
         color: '#646464'
       }
@@ -150,6 +153,7 @@ function drawMaterialPt() {
   var materialOptions = {
     height: 200,
     hAxis: {
+      title: 'Количество',
       textStyle: {
         color: '#646464'
       }
@@ -195,6 +199,7 @@ function drawMaterialEs() {
   var materialOptions = {
     height: 200,
     hAxis: {
+      title: 'Количество',
       textStyle: {
         color: '#646464'
       }

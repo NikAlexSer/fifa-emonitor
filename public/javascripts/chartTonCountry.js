@@ -18,7 +18,6 @@ function drawStuffPosNeg() {
   ]);
 
   var materialOptions = {
-    width: 800,
     height: 500,
     axes: {
       y: {
@@ -35,6 +34,7 @@ function drawStuffPosNeg() {
       }
     },
     vAxis: {
+      title: 'Тональность в %',
       textStyle: {
         color: '#646464'
       }

@@ -8,8 +8,9 @@
         <li class="active"><a href="#tweetslang">Язык твитов</a></li>
         <li class=""><a href="#tonalcountry">Тональность сообщений</a></li>
         <li class=""><a href="#topkeywords">Топ 5 ключевых слов</a></li>
-        <li class=""><a href="#summaryemo">Эмоциональный фон</a></li>
-        <li><a href="#emocountry">Эмоции по странам</a></li>
+        <!--<li class=""><a href="#summaryemo">Эмоциональный фон</a></li>-->
+        <li><a href="#emocountry">Эмоции по языкам</a></li>
+        <li><a href="#devteam">Команда разработки</a></li>
       </ul>
     </div>
   </div>
@@ -28,6 +29,10 @@
   <hr>
   <p class="bigger">
     <em>При клике на сектор диаграммы справа появится подробная информация по языку на время чемпионата</em>
+    <br>
+    <em> 1) Первый график отражает долю позитивных и негативных сообщений для данного языка</em>
+    <br>
+    <em> 2) Второй график отражает долю эмоций в сообщениях на этом языке</em>
   </p>
   <hr>
   <div class="row">
@@ -58,6 +63,10 @@
 <div class="container" id="cloudwords">
   <h2>Облако слов</h2>
   <hr>
+  <p class="bigger">
+    <em>В данном разделе представлены ключевые слова извлеченные из твиттов на всех языках за все дни ЧМ-2018</em>
+  </p>
+  <hr>
   <div class="row">
     <div class="col-md-12">
       <div id="cloud-top-words" style="width: 100%; height: 250px;"></div>
@@ -66,29 +75,27 @@
 </div>
 
 <div class="container" id="tonalcountry">
-  <h2>Тональность сообщений по странам</h2>
+  <h2>Тональность сообщений по языкам</h2>
+  <hr>
+  <p class="bigger">
+    <em>В данном разделе представлено распределение твиттов по тональности для всех языков за все время ЧМ-2018</em>
+  </p>
   <hr>
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-12">
       <div class="chart-container">
         <div id="chart_div0"></div>
       </div>
-    </div>
-    <div class="col-md-4">
-      <p class="large">
-        Experiment with all the data we collected.
-      </p>
-      <hr>
-      <p class="bigger">
-        <em>Do angry people tilt their heads more strongly? And what is a characteristic mood for people in Moscow? Find out!</em>
-      </p>
-      <hr>
     </div>
   </div>
 </div>
 
 <div class="container" id="topkeywords">
-  <h2>Топ 5 ключевых слов</h2>
+  <h2>Топ 5 ключевых слов по языкам</h2>
+  <hr>
+  <p class="bigger">
+    <em>В данном разделе представлены самые часто употребляемые в сообщениях слова и словосочетания для каждого анализируемого языка</em>
+  </p>
   <hr>
   <div class="row">
     <div class="col-md-6">
@@ -123,54 +130,48 @@
   </div>
 </div>
 
-<div class="container" id="summaryemo">
-  <h2>Обобщенный эмоциональный фон</h2>
-  <hr>
-  <div class="row">
-    <div class="col-md-8">
-      <div class="chart-container">
-        <div id="chart_div4"></div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <p class="large">
-        Experiment with all the data we collected.
-      </p>
-      <hr>
-      <p class="bigger">
-        <em>Do angry people tilt their heads more strongly? And what is a characteristic mood for people in Moscow? Find out!</em>
-      </p>
-      <hr>
-    </div>
-  </div>
-</div>
+<!--<div class="container" id="summaryemo">-->
+  <!--<h2>Обобщенный эмоциональный фон</h2>-->
+  <!--<hr>-->
+  <!--<div class="row">-->
+    <!--<div class="col-md-8">-->
+      <!--<div class="chart-container">-->
+        <!--<div id="chart_div4"></div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-md-4">-->
+      <!--<p class="large">-->
+        <!--Experiment with all the data we collected.-->
+      <!--</p>-->
+      <!--<hr>-->
+      <!--<p class="bigger">-->
+        <!--<em>Do angry people tilt their heads more strongly? And what is a characteristic mood for people in Moscow? Find out!</em>-->
+      <!--</p>-->
+      <!--<hr>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
 
 <div class="container" id="emocountry">
-  <h2>Эмоции по странам</h2>
+  <h2>Эмоции по языкам</h2>
+  <hr>
+  <p class="bigger">
+    <em>В данном разделе представлены эмоции из сообщений Twitter в разрезе языков за все время ЧМ-2018</em>
+  </p>
   <hr>
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-12">
       <div class="chart-container">
         <div id="chart_div5"></div>
       </div>
     </div>
-    <div class="col-md-4">
-      <p class="large">
-        Experiment with all the data we collected.
-      </p>
-      <hr>
-      <p class="bigger">
-        <em>Do angry people tilt their heads more strongly? And what is a characteristic mood for people in Moscow? Find out!</em>
-      </p>
-      <hr>
-    </div>
   </div>
 </div>
 
 
 
 
-<div class="container">
+<div class="container" id="devteam">
   <h2>Команда разработки</h2>
   <hr>
   <div class="row">
