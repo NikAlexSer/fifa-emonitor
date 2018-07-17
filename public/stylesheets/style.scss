@@ -55,6 +55,17 @@ body {
   }
 }
 
+.partners {
+  .pic {
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 75%;
+    }
+  }
+}
+
 @media only screen and (max-width: 990px){
   .our-team{ margin-bottom: 30px; }
 }
@@ -379,17 +390,6 @@ p {
   margin: 0 0 11px
 }
 
-.lead {
-  margin-bottom: 22px;
-  font-weight: 200;
-  line-height: 1.4
-}
-
-@media (min-width:768px) {
-  .lead {
-    font-size: 22.5px
-  }
-}
 
 .small,
 small {
@@ -398,17 +398,10 @@ small {
 
 ol,
 ul {
+  padding: 0;
   margin-top: 0;
   margin-bottom: 11px
 }
-
-ol ol,
-ol ul,
-ul ol,
-ul ul {
-  margin-bottom: 0
-}
-
 
 .container {
   margin-right: auto;
@@ -1661,11 +1654,6 @@ h3 {
 }
 
 
-.lead {
-  font-size: 1.25em!important;
-  color: #ddd
-}
-
 .large {
   font-size: 2em!important;
   color: #626262
@@ -1688,8 +1676,3 @@ a.larger:hover {
   font-size: 1.2em;
   color: #646464
 }
-
-ul {
-  padding: 0
-}
-

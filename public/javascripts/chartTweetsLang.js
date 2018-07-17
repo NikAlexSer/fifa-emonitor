@@ -42,19 +42,15 @@ function drawChartPie() {
 
   google.visualization.events.addListener(chart, 'select', selectHandler);
 
-  drawStuff('RU')
+  drawStuff('RU');
   drawStuffEmo('RU');
-
-  drawStuff('EN')
+  drawStuff('EN');
   drawStuffEmo('EN');
-
-  drawStuff('FR')
+  drawStuff('FR');
   drawStuffEmo('FR');
-
-  drawStuff('ES')
+  drawStuff('ES');
   drawStuffEmo('ES');
-
-  drawStuff('PT')
+  drawStuff('PT');
   drawStuffEmo('PT');
 
   function selectHandler() {
@@ -154,15 +150,12 @@ function drawStuff(lang) {
 
     if (lang !== 'RU') {
       google.visualization.events.addListener(materialChart, 'ready', hide);
-
       function hide() {
         $('#chart_days_polarity' + lang).addClass('hidden');
       }
     }
-
     materialChart.draw(data, google.charts.Bar.convertOptions(stuffMaterialOptions));
   }
-
   drawMaterialChart();
 }
 
@@ -190,13 +183,11 @@ function drawStuffEmo(lang) {
 
     if (lang !== 'RU') {
       google.visualization.events.addListener(materialChart, 'ready', hide);
-
       function hide() {
         $('#chart_days_emo' + lang).addClass('hidden');
       }
     }
     materialChart.draw(data, google.charts.Bar.convertOptions(stuffMaterialOptions));
   }
-
   drawMaterialChart();
 }
