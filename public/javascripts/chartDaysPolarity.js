@@ -2,7 +2,7 @@ google.charts.load('current', {'packages':['corechart', 'bar']});
 google.charts.setOnLoadCallback(drawStuff);
 
 function drawStuff() {
-  var chartDiv = document.getElementById('chart_div5'),
+  let chartDiv = document.getElementById('chart_div5'),
       data = new google.visualization.DataTable(),
       materialOptions = {
         width: 575,
@@ -51,7 +51,7 @@ function drawStuff() {
   ]);
 
   function drawMaterialChart() {
-    var materialChart = new google.charts.Bar(chartDiv);
+    let materialChart = new google.charts.Bar(chartDiv);
 
     materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
   }

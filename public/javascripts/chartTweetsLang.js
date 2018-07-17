@@ -2,7 +2,7 @@ google.charts.load('current', {'packages':['corechart', 'bar']});
 google.charts.setOnLoadCallback(drawChartPie);
 
 function drawChartPie() {
-  var data = google.visualization.arrayToDataTable([
+  let data = google.visualization.arrayToDataTable([
     ['Country', 'Number of tweets'],
     ['RU',     dataArray.langLength.RU],
     ['EN',      dataArray.langLength.EN],
@@ -11,7 +11,7 @@ function drawChartPie() {
     ['PT',    dataArray.langLength.PT]
   ]);
 
-  var options = {
+  let options = {
     height: 500,
     backgroundColor: {
       fill: '#F4F4F4',
@@ -36,29 +36,29 @@ function drawChartPie() {
     }
   };
 
-  var chart = new google.visualization.PieChart(document.getElementById('chart_div1'));
+  let chart = new google.visualization.PieChart(document.getElementById('chart_div1'));
 
   chart.draw(data, options);
 
   google.visualization.events.addListener(chart, 'select', selectHandler);
 
-  drawRuPol();
-  drawRuEmo();
+  drawStuff('RU')
+  drawStuffEmo('RU');
 
-  drawEnPol();
-  drawEnEmo();
+  drawStuff('EN')
+  drawStuffEmo('EN');
 
-  drawFrPol();
-  drawFrEmo();
+  drawStuff('FR')
+  drawStuffEmo('FR');
 
-  drawEsPol();
-  drawEsEmo();
+  drawStuff('ES')
+  drawStuffEmo('ES');
 
-  drawPtPol();
-  drawPtEmo();
+  drawStuff('PT')
+  drawStuffEmo('PT');
 
   function selectHandler() {
-    var selection = chart.getSelection();
+    let selection = chart.getSelection();
 
     if (selection[0]) {
       let $dayspolar = $('.dayspolar'),
@@ -101,400 +101,81 @@ function drawChartPie() {
   }
 }
 
-function drawRuPol() {
-  drawStuffRU()
-}
-function drawEnPol() {
-  drawStuffEN()
-}
-function drawFrPol() {
-  drawStuffFR()
-}
-function drawEsPol() {
-  drawStuffES()
-}
-function drawPtPol() {
-  drawStuffPT()
-}
-
-function drawRuEmo() {
-  drawStuffEmoRU()
-}
-function drawEnEmo() {
-  drawStuffEmoEN()
-}
-function drawFrEmo() {
-  drawStuffEmoFR()
-}
-function drawEsEmo() {
-  drawStuffEmoES()
-}
-function drawPtEmo() {
-  drawStuffEmoPT()
-}
-
-function drawStuffRU() {
-  var tempObj = dataArray.langDays.RU,
-      tempArr = [];
-
-  for (var key in tempObj) {
-    tempArr.push([tempObj[key].date.slice(8, 10) + '.' + tempObj[key].date.slice(5, 7), tempObj[key].polarityPos, tempObj[key].polarityNeg])
-  }
-
-
-
-
-  var chartDiv = document.getElementById('chart_days_polarityRU'),
-      data = new google.visualization.DataTable(),
-      materialOptions = {
-        height: 300,
-        width: '100%',
-        axes: {
-          y: {
-            distance: {label: '%'}, // Left y-axis.
-          }
-        },
-        backgroundColor: {
-          fill: '#F4F4F4',
-          opacity: 0
-        },
-        hAxis: {
-          textStyle: {
-            color: '#646464'
-          }
-        },
-        vAxis: {
-          title: 'Доля сообщений, в %',
-          textStyle: {
-            color: '#646464'
-          }
-        },
-        legend: {
-          position: 'bottom',
-          maxLines: 3,
-          textStyle: {
-            color: '#646464'
-          }
-        }
-      };
-
-  data.addColumn('string', 'Дни');
-  data.addColumn('number', 'Позитив');
-  data.addColumn('number', 'Негатив');
-
-
-
-  data.addRows(tempArr);
-
-  function drawMaterialChart() {
-    var materialChart = new google.charts.Bar(chartDiv);
-
-    materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
-  }
-
-  drawMaterialChart();
-};
-
-function drawStuffEN() {
-  var tempObj = dataArray.langDays.EN,
-      tempArr = [];
-
-  for (var key in tempObj) {
-    tempArr.push([tempObj[key].date.slice(8, 10) + '.' + tempObj[key].date.slice(5, 7), tempObj[key].polarityPos, tempObj[key].polarityNeg])
-  }
-
-
-
-
-  var chartDiv = document.getElementById('chart_days_polarityEN'),
-      data = new google.visualization.DataTable(),
-      materialOptions = {
-        height: 300,
-        width: '100%',
-        axes: {
-          y: {
-            distance: {label: '%'}, // Left y-axis.
-          }
-        },
-        backgroundColor: {
-          fill: '#F4F4F4',
-          opacity: 0
-        },
-        hAxis: {
-          textStyle: {
-            color: '#646464'
-          }
-        },
-        vAxis: {
-          title: 'Доля сообщений, в %',
-          textStyle: {
-            color: '#646464'
-          }
-        },
-        legend: {
-          position: 'bottom',
-          maxLines: 3,
-          textStyle: {
-            color: '#646464'
-          }
-        }
-      };
-
-  data.addColumn('string', 'Дни');
-  data.addColumn('number', 'Позитив');
-  data.addColumn('number', 'Негатив');
-
-
-
-  data.addRows(tempArr);
-
-  function drawMaterialChart() {
-    var materialChart = new google.charts.Bar(chartDiv);
-    google.visualization.events.addListener(materialChart, 'ready', hide);
-
-    function hide() {
-      $('#chart_days_polarityEN').addClass('hidden');
+let stuffMaterialOptions = {
+  height: 300,
+  width: '100%',
+  axes: {
+    y: {
+      distance: {label: '%'}, // Left y-axis.
     }
-    materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
+  },
+  backgroundColor: {
+    fill: '#F4F4F4',
+    opacity: 0
+  },
+  hAxis: {
+    textStyle: {
+      color: '#646464'
+    }
+  },
+  vAxis: {
+    title: 'Доля сообщений, в %',
+    textStyle: {
+      color: '#646464'
+    }
+  },
+  legend: {
+    position: 'bottom',
+    maxLines: 3,
+    textStyle: {
+      color: '#646464'
+    }
   }
-
-  drawMaterialChart();
 };
 
-
-
-function drawStuffFR() {
-  var tempObj = dataArray.langDays.FR,
+function drawStuff(lang) {
+  let tempObj = dataArray.langDays[lang],
       tempArr = [];
 
-  for (var key in tempObj) {
+  for (let key in tempObj) {
     tempArr.push([tempObj[key].date.slice(8, 10) + '.' + tempObj[key].date.slice(5, 7), tempObj[key].polarityPos, tempObj[key].polarityNeg])
   }
 
-  var chartDiv = document.getElementById('chart_days_polarityFR'),
-      data = new google.visualization.DataTable(),
-      materialOptions = {
-        height: 300,
-        axes: {
-          y: {
-            distance: {label: '%'}, // Left y-axis.
-          }
-        },
-        backgroundColor: {
-          fill: '#F4F4F4',
-          opacity: 0
-        },
-        hAxis: {
-          textStyle: {
-            color: '#646464'
-          }
-        },
-        vAxis: {
-          title: 'Доля сообщений, в %',
-          textStyle: {
-            color: '#646464'
-          }
-        },
-        legend: {
-          position: 'bottom',
-          maxLines: 3,
-          textStyle: {
-            color: '#646464'
-          }
-        }
-      };
+  let chartDiv = document.getElementById('chart_days_polarity' + lang),
+      data = new google.visualization.DataTable();
 
   data.addColumn('string', 'Дни');
   data.addColumn('number', 'Позитив');
   data.addColumn('number', 'Негатив');
-
-
-
   data.addRows(tempArr);
 
   function drawMaterialChart() {
-    var materialChart = new google.charts.Bar(chartDiv);
-    google.visualization.events.addListener(materialChart, 'ready', hide);
+    let materialChart = new google.charts.Bar(chartDiv);
 
-    function hide() {
-      $('#chart_days_polarityFR').addClass('hidden');
+    if (lang !== 'RU') {
+      google.visualization.events.addListener(materialChart, 'ready', hide);
+
+      function hide() {
+        $('#chart_days_polarity' + lang).addClass('hidden');
+      }
     }
-    materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
+
+    materialChart.draw(data, google.charts.Bar.convertOptions(stuffMaterialOptions));
   }
 
   drawMaterialChart();
-};
+}
 
-
-function drawStuffES() {
-  var tempObj = dataArray.langDays.ES,
+function drawStuffEmo(lang) {
+  let tempObj = dataArray.langDays[lang],
       tempArr = [];
 
-  for (var key in tempObj) {
-    tempArr.push([tempObj[key].date.slice(8, 10) + '.' + tempObj[key].date.slice(5, 7), tempObj[key].polarityPos, tempObj[key].polarityNeg])
-  }
-
-  var chartDiv = document.getElementById('chart_days_polarityES'),
-      data = new google.visualization.DataTable(),
-      materialOptions = {
-        height: 300,
-        axes: {
-          y: {
-            distance: {label: '%'}, // Left y-axis.
-          }
-        },
-        backgroundColor: {
-          fill: '#F4F4F4',
-          opacity: 0
-        },
-        hAxis: {
-          textStyle: {
-            color: '#646464'
-          }
-        },
-        vAxis: {
-          title: 'Доля сообщений, в %',
-          textStyle: {
-            color: '#646464'
-          }
-        },
-        legend: {
-          position: 'bottom',
-          maxLines: 3,
-          textStyle: {
-            color: '#646464'
-          }
-        }
-      };
-
-  data.addColumn('string', 'Дни');
-  data.addColumn('number', 'Позитив');
-  data.addColumn('number', 'Негатив');
-
-
-
-  data.addRows(tempArr);
-
-  function drawMaterialChart() {
-    var materialChart = new google.charts.Bar(chartDiv);
-    google.visualization.events.addListener(materialChart, 'ready', hide);
-
-    function hide() {
-      $('#chart_days_polarityES').addClass('hidden');
-    }
-    materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
-  }
-
-  drawMaterialChart();
-};
-
-
-
-function drawStuffPT() {
-  var tempObj = dataArray.langDays.PT,
-      tempArr = [];
-
-  for (var key in tempObj) {
-    tempArr.push([tempObj[key].date.slice(8, 10) + '.' + tempObj[key].date.slice(5, 7), tempObj[key].polarityPos, tempObj[key].polarityNeg])
-  }
-
-
-  var chartDiv = document.getElementById('chart_days_polarityPT'),
-      data = new google.visualization.DataTable(),
-      materialOptions = {
-        height: 300,
-        axes: {
-          y: {
-            distance: {label: '%'}, // Left y-axis.
-          }
-        },
-        backgroundColor: {
-          fill: '#F4F4F4',
-          opacity: 0
-        },
-        hAxis: {
-          textStyle: {
-            color: '#646464'
-          }
-        },
-        vAxis: {
-          title: 'Доля сообщений, в %',
-          textStyle: {
-            color: '#646464'
-          }
-        },
-        legend: {
-          position: 'bottom',
-          maxLines: 3,
-          textStyle: {
-            color: '#646464'
-          }
-        }
-      };
-
-  data.addColumn('string', 'Дни');
-  data.addColumn('number', 'Позитив');
-  data.addColumn('number', 'Негатив');
-
-
-
-  data.addRows(tempArr);
-
-  function drawMaterialChart() {
-    var materialChart = new google.charts.Bar(chartDiv);
-    google.visualization.events.addListener(materialChart, 'ready', hide);
-
-    function hide() {
-      $('#chart_days_polarityPT').addClass('hidden');
-    }
-    materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
-  }
-
-  drawMaterialChart();
-};
-
-
-function drawStuffEmoRU() {
-  var tempObj = dataArray.langDays.RU,
-      tempArr = [];
-
-  for (var key in tempObj) {
+  for (let key in tempObj) {
     tempArr.push([tempObj[key].date.slice(8, 10) + '.' + tempObj[key].date.slice(5, 7), tempObj[key].emo[0], tempObj[key].emo[1],tempObj[key].emo[2],tempObj[key].emo[3],tempObj[key].emo[4],])
   }
 
-
-  var chartDiv = document.getElementById('chart_days_emoRU'),
-      data = new google.visualization.DataTable(),
-      materialOptions = {
-        height: 300,
-        axes: {
-          y: {
-            distance: {label: '%'}, // Left y-axis.
-          }
-        },
-        backgroundColor: {
-          fill: '#F4F4F4',
-          opacity: 0
-        },
-        hAxis: {
-          textStyle: {
-            color: '#646464'
-          }
-        },
-        vAxis: {
-          title: 'Доля сообщений, в %',
-          textStyle: {
-            color: '#646464'
-          }
-        },
-        legend: {
-          position: 'bottom',
-          maxLines: 3,
-          textStyle: {
-            color: '#646464'
-          }
-        }
-      };
+  let chartDiv = document.getElementById('chart_days_emo' + lang),
+      data = new google.visualization.DataTable();
 
   data.addColumn('string', 'Дни');
   data.addColumn('number', 'Печаль');
@@ -502,269 +183,20 @@ function drawStuffEmoRU() {
   data.addColumn('number', 'Страх');
   data.addColumn('number', 'Отвращение');
   data.addColumn('number', 'Гнев');
-
   data.addRows(tempArr);
 
   function drawMaterialChart() {
-    var materialChart = new google.charts.Bar(chartDiv);
+    let materialChart = new google.charts.Bar(chartDiv);
 
-    materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
-  }
+    if (lang !== 'RU') {
+      google.visualization.events.addListener(materialChart, 'ready', hide);
 
-  drawMaterialChart();
-};
-
-function drawStuffEmoEN() {
-  var tempObj = dataArray.langDays.EN,
-      tempArr = [];
-
-  for (var key in tempObj) {
-    tempArr.push([tempObj[key].date.slice(8, 10) + '.' + tempObj[key].date.slice(5, 7), tempObj[key].emo[0], tempObj[key].emo[1],tempObj[key].emo[2],tempObj[key].emo[3],tempObj[key].emo[4],])
-  }
-
-
-  var chartDiv = document.getElementById('chart_days_emoEN'),
-      data = new google.visualization.DataTable(),
-      materialOptions = {
-        height: 300,
-        axes: {
-          y: {
-            distance: {label: '%'}, // Left y-axis.
-          }
-        },
-        backgroundColor: {
-          fill: '#F4F4F4',
-          opacity: 0
-        },
-        hAxis: {
-          textStyle: {
-            color: '#646464'
-          }
-        },
-        vAxis: {
-          title: 'Доля сообщений, в %',
-          textStyle: {
-            color: '#646464'
-          }
-        },
-        legend: {
-          position: 'bottom',
-          maxLines: 3,
-          textStyle: {
-            color: '#646464'
-          }
-        }
-      };
-
-  data.addColumn('string', 'Дни');
-  data.addColumn('number', 'Печаль');
-  data.addColumn('number', 'Радость');
-  data.addColumn('number', 'Страх');
-  data.addColumn('number', 'Отвращение');
-  data.addColumn('number', 'Гнев');
-
-  data.addRows(tempArr);
-
-  function drawMaterialChart() {
-    var materialChart = new google.charts.Bar(chartDiv);
-    google.visualization.events.addListener(materialChart, 'ready', hide);
-
-    function hide() {
-      $('#chart_days_emoEN').addClass('hidden');
+      function hide() {
+        $('#chart_days_emo' + lang).addClass('hidden');
+      }
     }
-    materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
+    materialChart.draw(data, google.charts.Bar.convertOptions(stuffMaterialOptions));
   }
 
   drawMaterialChart();
-};
-
-function drawStuffEmoFR() {
-  var tempObj = dataArray.langDays.FR,
-      tempArr = [];
-
-  for (var key in tempObj) {
-    tempArr.push([tempObj[key].date.slice(8, 10) + '.' + tempObj[key].date.slice(5, 7), tempObj[key].emo[0], tempObj[key].emo[1],tempObj[key].emo[2],tempObj[key].emo[3],tempObj[key].emo[4],])
-  }
-
-
-  var chartDiv = document.getElementById('chart_days_emoFR'),
-      data = new google.visualization.DataTable(),
-      materialOptions = {
-        height: 300,
-        axes: {
-          y: {
-            distance: {label: '%'}, // Left y-axis.
-          }
-        },
-        backgroundColor: {
-          fill: '#F4F4F4',
-          opacity: 0
-        },
-        hAxis: {
-          textStyle: {
-            color: '#646464'
-          }
-        },
-        vAxis: {
-          title: 'Доля сообщений, в %',
-          textStyle: {
-            color: '#646464'
-          }
-        },
-        legend: {
-          position: 'bottom',
-          maxLines: 3,
-          textStyle: {
-            color: '#646464'
-          }
-        }
-      };
-
-  data.addColumn('string', 'Дни');
-  data.addColumn('number', 'Печаль');
-  data.addColumn('number', 'Радость');
-  data.addColumn('number', 'Страх');
-  data.addColumn('number', 'Отвращение');
-  data.addColumn('number', 'Гнев');
-
-  data.addRows(tempArr);
-
-  function drawMaterialChart() {
-    var materialChart = new google.charts.Bar(chartDiv);
-    google.visualization.events.addListener(materialChart, 'ready', hide);
-
-    function hide() {
-      $('#chart_days_emoFR').addClass('hidden');
-    }
-    materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
-  }
-
-  drawMaterialChart();
-};
-
-function drawStuffEmoES() {
-  var tempObj = dataArray.langDays.ES,
-      tempArr = [];
-
-  for (var key in tempObj) {
-    tempArr.push([tempObj[key].date.slice(8, 10) + '.' + tempObj[key].date.slice(5, 7), tempObj[key].emo[0], tempObj[key].emo[1],tempObj[key].emo[2],tempObj[key].emo[3],tempObj[key].emo[4],])
-  }
-
-
-  var chartDiv = document.getElementById('chart_days_emoES'),
-      data = new google.visualization.DataTable(),
-      materialOptions = {
-        height: 300,
-        axes: {
-          y: {
-            distance: {label: '%'}, // Left y-axis.
-          }
-        },
-        backgroundColor: {
-          fill: '#F4F4F4',
-          opacity: 0
-        },
-        hAxis: {
-          textStyle: {
-            color: '#646464'
-          }
-        },
-        vAxis: {
-          title: 'Доля сообщений, в %',
-          textStyle: {
-            color: '#646464'
-          }
-        },
-        legend: {
-          position: 'bottom',
-          maxLines: 3,
-          textStyle: {
-            color: '#646464'
-          }
-        }
-      };
-
-  data.addColumn('string', 'Дни');
-  data.addColumn('number', 'Печаль');
-  data.addColumn('number', 'Радость');
-  data.addColumn('number', 'Страх');
-  data.addColumn('number', 'Отвращение');
-  data.addColumn('number', 'Гнев');
-
-  data.addRows(tempArr);
-
-  function drawMaterialChart() {
-    var materialChart = new google.charts.Bar(chartDiv);
-    google.visualization.events.addListener(materialChart, 'ready', hide);
-
-    function hide() {
-      $('#chart_days_emoES').addClass('hidden');
-    }
-    materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
-  }
-
-  drawMaterialChart();
-};
-
-function drawStuffEmoPT() {
-  var tempObj = dataArray.langDays.PT,
-      tempArr = [];
-
-  for (var key in tempObj) {
-    tempArr.push([tempObj[key].date.slice(8, 10) + '.' + tempObj[key].date.slice(5, 7), tempObj[key].emo[0], tempObj[key].emo[1],tempObj[key].emo[2],tempObj[key].emo[3],tempObj[key].emo[4],])
-  }
-
-  var chartDiv = document.getElementById('chart_days_emoPT'),
-      data = new google.visualization.DataTable(),
-      materialOptions = {
-        height: 300,
-        axes: {
-          y: {
-            distance: {label: '%'}, // Left y-axis.
-          }
-        },
-        backgroundColor: {
-          fill: '#F4F4F4',
-          opacity: 0
-        },
-        hAxis: {
-          textStyle: {
-            color: '#646464'
-          }
-        },
-        vAxis: {
-          title: 'Доля сообщений, в %',
-          textStyle: {
-            color: '#646464'
-          }
-        },
-        legend: {
-          position: 'bottom',
-          maxLines: 3,
-          textStyle: {
-            color: '#646464'
-          }
-        }
-      };
-
-  data.addColumn('string', 'Дни');
-  data.addColumn('number', 'Печаль');
-  data.addColumn('number', 'Радость');
-  data.addColumn('number', 'Страх');
-  data.addColumn('number', 'Отвращение');
-  data.addColumn('number', 'Гнев');
-
-  data.addRows(tempArr);
-
-  function drawMaterialChart() {
-    var materialChart = new google.charts.Bar(chartDiv);
-    google.visualization.events.addListener(materialChart, 'ready', hide);
-
-    function hide() {
-      $('#chart_days_emoPT').addClass('hidden');
-    }
-    materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
-  }
-
-  drawMaterialChart();
-};
+}

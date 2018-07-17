@@ -2,7 +2,7 @@ google.charts.load('current', {'packages':['line']});
 google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
-  var data = new google.visualization.DataTable(),
+  let data = new google.visualization.DataTable(),
       options = {
         width: 800,
         height: 500,
@@ -44,7 +44,7 @@ function drawChart() {
     ['Гнев', dataArray.countryEmo.RU[5], dataArray.countryEmo.FR[5], dataArray.countryEmo.PT[5], dataArray.countryEmo.ES[5], dataArray.countryEmo.EN[5]]
   ]);
 
-  var chart = new google.charts.Line(document.getElementById('chart_div4'));
+  let chart = new google.charts.Line(document.getElementById('chart_div4'));
 
   chart.draw(data, google.charts.Line.convertOptions(options));
 }
