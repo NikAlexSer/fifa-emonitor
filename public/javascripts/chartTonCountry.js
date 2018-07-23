@@ -35,7 +35,7 @@ function drawStuffPosNeg() {
         }
       };
 
-  data.addColumn('string', 'Страны');
+  data.addColumn('string', 'Языки');
   data.addColumn('number', 'Негатив');
   data.addColumn('number', 'Позитив');
   data.addRows([
