@@ -58,10 +58,10 @@ body {
 .partners {
   .pic {
     width: 100%;
-    height: 100%;
+    height: 345px;
     img {
       width: 100%;
-      height: 75%;
+
     }
   }
 }
@@ -76,9 +76,10 @@ body {
 .logo {
   width: 100%;
   height: auto;
+  margin-top: 3em;
 }
 .chart-container {
-  width: 100%;
+  width: 95%;
   padding: 25px;
   margin: 0 0 50px 0;
   display: block;
