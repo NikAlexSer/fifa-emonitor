@@ -1677,7 +1677,8 @@ h3 {
 
 .larger {
   font-size: 1.5em!important;
-  color: #ddd
+  color: #646464;
+  text-align: justify;
 }
 
 a.larger {
@@ -1691,4 +1692,7 @@ a.larger:hover {
 .bigger {
   font-size: 1.2em;
   color: #646464
+}
+ul.larger {
+  list-style: none;
 }
