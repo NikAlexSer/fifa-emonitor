@@ -48,11 +48,13 @@ body {
     color: #333;
     text-transform: capitalise; }
 
-.partners .pic {
-  width: 100%;
-  height: 345px; }
-  .partners .pic img {
-    width: 100%; }
+.partners {
+  margin-top: 50px; }
+  .partners .pic {
+    width: 100%;
+    height: 345px; }
+    .partners .pic img {
+      width: 100%; }
 
 @media only screen and (max-width: 990px) {
   .our-team {
