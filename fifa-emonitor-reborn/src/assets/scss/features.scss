@@ -1,0 +1,28 @@
+.landing-features {
+  .landing-features-item {
+    padding: 11px 20px;
+    max-width: 564px;
+    margin: 0 auto 1px;
+    font-size: 19px;
+    position: relative;
+    strong {
+      color: #213083;
+      font-weight: 700;
+    }
+    b {
+      color: #000000;
+      font-weight: 700;
+    }
+    &:after {
+      background: #dbdbdb;
+      bottom: 0;
+      content: '';
+      display: block;
+      height: 1px;
+      left: 0;
+      margin: 0 26px;
+      position: absolute;
+      right: 0;
+    }
+  }
+}

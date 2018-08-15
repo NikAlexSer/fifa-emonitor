@@ -1,0 +1,22 @@
+.landing-top {
+  background-image: linear-gradient(-180deg,#395797 0,#17227c 100%);
+  padding-top: 100px;
+  margin: 0 auto;
+  .landing-title {
+    max-width: 913px;
+    margin: 0 auto;
+  }
+  .title {
+    color: #ffffff;
+  }
+  .landing-title-description {
+    max-width: 913px;
+    margin: 0 auto;
+    span {
+      color: #D7D7D7;
+      font-size: 18px;
+      font-weight: initial;
+    }
+  }
+}
+
